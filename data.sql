@@ -5,3 +5,8 @@ INSERT INTO animals (name,neutered,escape_attempts,date_of_birth,weight_kg) VALU
 
 INSERT INTO owners (full_name,age) VALUES ('Sam Smith',34),('Jennifer Orwell',19),('Bob',45),('Melody Pond',77),('Dean Winchester',14),('Jodie Whittake',38);
 INSERT INTO species (name) VALUES ('Pokemon'),('Digimon');
+
+
+/* UPDATE DATA IN ANIMAL TABLE */
+UPDATE animals SET species_id=2 where name LIKE '%mon';
+UPDATE animals SET species_id=1 where name NOT LIKE '%mon';
