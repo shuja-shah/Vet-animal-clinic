@@ -44,3 +44,11 @@ SELECT AVG(weight_kg) from animals;
 SELECT MAX(escape_attempts),neutered from animals GROUP BY neutered;
 SELECT MIN(weight_kg),MAX(weight_kg),species from animals GROUP BY species;
 SELECT AVG(escape_attempts),species from animals WHERE date_of_birth BETWEEN '1990-01-01' and '2000-01-01' GROUP BY species;
+
+
+/* QUERY MULTI TABLE */
+
+SELECT a.name,v.name,vi.visist_date from animals a,vets v,visits vi where vi.animals_id=a.id and vi.vets_id=v.id and v.id=1;
+SELECT count(a.name),a.name,v.name as vet_name from animals a,vets v,visits vi where vi.animals_id=a.id and vi.vets_id=v.id and v.id=3 GROUP BY a.name,v.name;
+SELECT v.name, s.name from species s full join specializations spe on spe.species_id = s.id FULL JOIN vets v on v.id = spe.vets_id;
+SELECT a.name, a.date_of_birth,v.name,vi.visist_date from animals a,vets v, visits vi where vi.animals_id=a.id and vi.vets_id=v.id and v.id=3 and visist_date BETWEEN '2020-04-01' and '2020-08-30';
