@@ -10,3 +10,12 @@ INSERT INTO species (name) VALUES ('Pokemon'),('Digimon');
 /* UPDATE DATA IN ANIMAL TABLE */
 UPDATE animals SET species_id=2 where name LIKE '%mon';
 UPDATE animals SET species_id=1 where name NOT LIKE '%mon';
+
+/* UPDATA OWNER ID  TO OWN ANIMALS TABLE*/
+
+UPDATE animals SET owner_id=1 where name='Agumon';
+UPDATE animals SET owner_id=2 where name IN ('Gabumon','Pikachu');
+UPDATE animals SET owner_id=3 where name IN ('Devimon','Plantmon');
+UPDATE animals SET owner_id=4 where name IN ('Charmander','Squirtle','Blossom');
+UPDATE animals SET owner_id=5 where name IN ('Angemon','Boarmon');
+
