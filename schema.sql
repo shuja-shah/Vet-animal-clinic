@@ -11,3 +11,13 @@ CREATE TABLE animals (
 
 /* Add Column */
 ALTER TABLE animals ADD species VARCHAR(20);
+
+/* Create new Owner Table */
+CREATE TABLE IF NOT EXISTs owners(id SERIAL PRIMARY KEY,
+full_name VARCHAR(60),
+age INT);
+
+/* Create Species Table */
+CREATE TABLE IF NOT EXISTS species(
+id SERIAL PRIMARY KEY,
+name VARCHAR(50));
