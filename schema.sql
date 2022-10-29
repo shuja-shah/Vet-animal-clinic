@@ -21,3 +21,14 @@ age INT);
 CREATE TABLE IF NOT EXISTS species(
 id SERIAL PRIMARY KEY,
 name VARCHAR(50));
+
+
+/* Alter Table Animals */
+ ALTER TABLE animals DROP COLUMN species; 
+ ALTER TABLE animals ADD species_id INT;
+ ALTER TABLE animals ADD CONSTRAINT species_constraint FOREIGN KEY (species_id) references species (id);
+
+ ALTER TABLE animals ADD owner_id INT;
+ ALTER TABLE animals ADD CONSTRAINT owner_constraint FOREIGN KEY (owner_id) REFERENCES owners (id);
+
+ 
