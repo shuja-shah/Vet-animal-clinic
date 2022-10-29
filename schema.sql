@@ -8,3 +8,6 @@ CREATE TABLE animals (
     weight_kg DECIMAL NOT NULL,
 );
 
+
+/* Add Column */
+ALTER TABLE animals ADD species VARCHAR(20);
