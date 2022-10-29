@@ -39,3 +39,10 @@ name VARCHAR(60),
 age INT,
 date_of_graduation date,
 PRIMARY KEY(id));
+
+/* Create Specialization Table */
+CREATE TABLE IF NOT EXISTS specializations (
+species_id INT,
+vets_id INT,
+CONSTRAINT vets_fk FOREIGN KEY(vets_id) REFERENCES vets (id),
+CONSTRAINT species_fk FOREIGN KEY(species_id) REFERENCES species (id));
